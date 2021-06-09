@@ -1,0 +1,36 @@
+.desktopNavigationWrapper{
+	display: grid;
+	grid-template-columns:  repeat(20,1fr);
+	grid-template-rows: repeat(1,1fr);
+	background-color: #CCC;
+}
+.navigationLogotype{
+	grid-column:  2/2;
+	width: 45px;
+	padding: 5%;
+}
+.signInButton, .displayUsername{
+	grid-column: 19/20;
+}
+.shopButton{
+	grid-column: 4/5;
+}
+.accesoriesButton{
+	grid-column: 5/6;
+}
+.hotButton{
+	grid-column: 6/7;
+}
+.brandsButton{
+	grid-column: 7/8;
+
+}
+
+.signInButton, .navigationLogotype, .shopButton, .accesoriesButton, .hotButton, .brandsButton{
+	cursor: pointer;
+	align-self: center;
+	justify-self: center;
+	font-size: 1.2rem;
+	grid-row: 1/1;
+	text-transform: uppercase;
+}

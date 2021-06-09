@@ -1,0 +1,31 @@
+.homeViewWrapper{
+	width: 100vw;
+}
+.homeviewWomenWrapper{
+	display:grid;
+	grid-template-columns:  repeat(5,1fr);
+	position: relative;
+}
+.HomeViewClothItems{
+	padding: 10px;
+}
+.HomeViewClothTitle{
+	width: 75%;
+}
+.HomeViewClothImage{
+	width: 15vw;
+}
+.homeViewLineText{
+	text-align: center;
+	position: relative;
+	top:5px;
+	text-transform: uppercase;
+}
+.homeViewLine{
+	height: 10px;
+	background-color:#ff4444ad;
+	border:none;
+}
+.linediv{
+	margin-top : 5vw;
+}
