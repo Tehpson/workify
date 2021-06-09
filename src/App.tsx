@@ -5,10 +5,8 @@ import { UserProvider } from './assets/provider/UserProvider'
 
 export const App = () => {
 	return (
-		<UserProvider>
 			<Routes>
 				<Navigation />
 			</Routes>
-		</UserProvider>
 	)
 }
