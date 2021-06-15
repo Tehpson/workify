@@ -1,0 +1,5 @@
+.desktopNavigationWrapper{
+    background-color: #00EFFF;
+    display: grid;
+    grid-template: repeat(20, 1fr);
+}
