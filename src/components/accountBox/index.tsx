@@ -140,7 +140,7 @@ export function AccountBox(props: any) {
             <HeaderContainer>
               <HeaderText>Welcome</HeaderText>
               <HeaderText>To Workify</HeaderText>
-              <SmallText >Make training more social</SmallText>
+              <HeaderText>Make training more social</HeaderText>
               <SmallText>Please sign-in to continue!</SmallText>
             </HeaderContainer>
           )}
