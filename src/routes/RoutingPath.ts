@@ -1,7 +1,8 @@
 const signIn = '/signin'
-const homeView = '/'
+const homeView = '/homeView'
 
 
 export default{
 	signIn,
+	homeView
 }
