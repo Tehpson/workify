@@ -6,7 +6,7 @@ import { AccountContext } from './accountContext';
 import { SignupForm } from './signupForm';
 
 const BoxContainer = styled.div`
-  width: 380px;
+  width: 680px;
   min-height: 550px;
   display: grid | inline-grid;
   grid-template-columns: 100px 50px 100px;
@@ -35,7 +35,7 @@ const BackDrop = styled(motion.div)`
   flex-direction: column;
   border-radius: 50%;
   transform: rotate(60deg);
-  top: -290px;
+  top: -520px;
   left: -70px;
   background: rgb(241, 196, 15);
   background: linear-gradient(
@@ -47,7 +47,6 @@ const BackDrop = styled(motion.div)`
 
 const HeaderContainer = styled.div`
   width: 100%;
-
   display: flex;
   flex-direction: column;
 `;
@@ -96,7 +95,7 @@ const backdropVariants = {
 const expandingTransition = {
   type: 'spring',
   duration: 2.3,
-  stiffness: 30,
+  stiffness: 40,
 };
 
 export function AccountBox(props: any) {
@@ -114,14 +113,14 @@ export function AccountBox(props: any) {
     playExpandingAnimation();
     setTimeout(() => {
       setActive('signup');
-    }, 400);
+    }, 100);
   };
 
   const switchToSignin = () => {
     playExpandingAnimation();
     setTimeout(() => {
       setActive('signin');
-    }, 400);
+    }, 100);
   };
 
   const contextValue = { switchToSignup, switchToSignin };
@@ -140,6 +139,7 @@ export function AccountBox(props: any) {
             <HeaderContainer>
               <HeaderText>Welcome</HeaderText>
               <HeaderText>To Workify</HeaderText>
+              <HeaderText>Make training more social</HeaderText>
               <SmallText>Please sign-in to continue!</SmallText>
             </HeaderContainer>
           )}
