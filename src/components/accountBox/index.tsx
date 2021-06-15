@@ -67,6 +67,7 @@ const SmallText = styled.h5`
   z-index: 10;
   margin: 0;
   margin-top: 7px;
+  
 `;
 
 const InnerContainer = styled.div`
