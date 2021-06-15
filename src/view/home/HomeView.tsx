@@ -1,5 +1,5 @@
 import React from 'react'
-import './Home.css'
+import './HomeView.css'
 
 export const Index = () => {
     return (

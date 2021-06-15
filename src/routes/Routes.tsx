@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import {SignIn} from "../view/signin/SignIn"
 import RoutingPath from './RoutingPath'
-import {Index} from '../view/home/Index'
+import {Index} from '../view/home/HomeView'
 
 export const Routes = (props: { children?: React.ReactChild }) => {
 
