@@ -24,9 +24,21 @@ const GetWorkout = (userID:string, workoutID:string)=>{
 	return http.get(`/user/${userID}/WorkoutData/${workoutID}`)
 }
 
+const AddWorkout = (userID:string,title:string,comment:string, time:number,layout:number)=>{
+	const data ={ 
+		title: title,
+		date:new Date().getDate.toString()+new Date().getTime.toString(),
+		time:time,
+		comment:comment,
+		layout:layout,
+	}
+	return http.post(`/user/yeeet}/WorkoutData}`,data)
+}
+
 export default{
 	RequestLogin,
 	CreateUser,
 	GetallWorkouts,
-	GetWorkout
+	GetWorkout,
+	AddWorkout
 }

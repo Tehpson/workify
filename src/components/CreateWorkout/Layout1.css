@@ -50,3 +50,9 @@
     grid-row: 1/2;
     color: rgb(0, 0, 0);
 }
+.CWtimeName{
+	align-self: center;
+    grid-column: 4/4;
+    grid-row: 1/2;
+    color: #fff;
+}
