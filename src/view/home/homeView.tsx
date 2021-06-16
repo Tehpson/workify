@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService';
 import { UserContext } from '../../provider/UserProvider';
 import { useContext, useState } from 'react';
+import { Layout1 } from '../../components/showWorkout/Layout1';
 
 export const Index = () => {
   const [authebticatedUser, setAuthebticatedUser] = useContext(UserContext);
@@ -26,7 +27,7 @@ export const Index = () => {
     }
   };
   const displayData = ()=>{
-      serverRespons.results.map
+      serverRespons?.results?.map((item:any)=>))
   }
 
   return (
