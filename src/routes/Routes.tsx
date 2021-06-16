@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { SignIn } from "../view/signin/SignIn"
-import { homeView } from '../view/home/homeView'
+import {Index as homeView} from '../view/home/homeView'
 import {View404} from '../view/404view/404View'
 import RoutingPath from './RoutingPath'
 import { UserContext } from '../provider/UserProvider'
