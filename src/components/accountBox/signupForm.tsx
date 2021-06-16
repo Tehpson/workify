@@ -12,6 +12,7 @@ import { AccountContext } from './accountContext';
 
 export function SignupForm(props: any) {
   const { switchToSignin } = useContext(AccountContext);
+  const [crendatials, setCrendatials] = useState<string>({email, username, password})
 
   return (
     <BoxContainer>
