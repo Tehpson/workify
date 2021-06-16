@@ -1,4 +1,4 @@
-import React from 'react'
+import "./Layout1.css"
 
 export const Layout1 = () => {
 	return (
