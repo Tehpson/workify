@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { RequestLogin } from '../../assets/api/service/WorkifyAPIService';
+import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService'
 import {
   BoldLink,
   BoxContainer,
@@ -17,7 +17,7 @@ export const LoginForm = (props: any) => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const { switchToSignup } = useContext(AccountContext);
   const Login = () => {
-    RequestLogin(credentials.email, credentials.password)
+    WorkifyAPIService.RequestLogin(credentials.email, credentials.password)
     userHistory.push(RoutingPath.homeView);
   }
   // const state = {email: "",password: ""};
