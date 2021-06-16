@@ -15,26 +15,26 @@ import { ServerResponse } from 'node:http';
 
 export function SignupForm(props: any) {
   const { switchToSignin } = useContext(AccountContext);
-  const [credentials, setCrendatials] = useState({email:"", username:"", password:"",confirmPassword:""})
+  const [credentials, setCrendatials] = useState({ email: "", username: "", password: "", confirmPassword: "" })
   const [serverResponse, setserverResponse] = useState<any>()
   useEffect(() => {
-    
+
   }, [serverResponse])
-  const ConfirmPassword=()=>{
-    if(credentials.password==credentials.confirmPassword){
+  const ConfirmPassword = () => {
+    if (credentials.password == credentials.confirmPassword) {
       ConfirmLogin()
 
     }
-    else{console.log("Password does not match")}
+    else { console.log("Password does not match") }
   }
   const ConfirmLogin = async () => {
-		try {
-			const { data } = await WorkifyAPIService.CreateUser(credentials.username, credentials.password, credentials.email,);
-			setserverResponse(data);
-		} catch (error) {
-			console.log(error);
-		}
-	};
+    try {
+      const { data } = await WorkifyAPIService.CreateUser(credentials.username, credentials.password, credentials.email,);
+      setserverResponse(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 
   return (

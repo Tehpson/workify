@@ -1,13 +1,13 @@
-.CWcontainer{
+.CWcontainer {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     height: 24vh;
     border-radius: 20px;
     background-color: #0b1c33;
 }
 
-.CWusername{
+.CWusername {
     font-size: 25px;
     align-self: center;
     justify-self: center;
@@ -16,7 +16,7 @@
     color: rgb(255, 255, 255);
 }
 
-.CWtimeofpost{
+.CWtimeofpost {
     font-size: 25px;
     justify-self: left;
     align-self: center;
@@ -25,7 +25,7 @@
     color: rgb(255, 255, 255);
 }
 
-.CWpost{
+.CWpost {
     word-wrap: break-word;
     font-size: 25px;
     grid-column: 3/6;
@@ -35,7 +35,7 @@
     color: rgb(0, 0, 0);
 }
 
-.CWtitle{
+.CWtitle {
     font-size: 30px;
     justify-self: center;
     align-self: center;
@@ -44,14 +44,15 @@
     color: rgb(0, 0, 0);
 }
 
-.CWtime{
+.CWtime {
     align-self: center;
     grid-column: 3/4;
     grid-row: 1/2;
     color: rgb(0, 0, 0);
 }
-.CWtimeName{
-	align-self: center;
+
+.CWtimeName {
+    align-self: center;
     grid-column: 4/4;
     grid-row: 1/2;
     color: #fff;

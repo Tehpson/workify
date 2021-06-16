@@ -1,7 +1,7 @@
-import './assets/global/Global.css';
-import { Routes } from './routes/Routes';
-import { Navigation } from './components/navigation/Navigation';
-import { UserProvider } from './provider/UserProvider';
+import './assets/global/Global.css'
+import { Routes } from './routes/Routes'
+import { Navigation } from './components/navigation/Navigation'
+import { UserProvider } from './provider/UserProvider'
 
 function App() {
 	return (
@@ -10,6 +10,6 @@ function App() {
 				<Navigation />
 			</Routes>
 		</UserProvider>
-	);
+	)
 }
-export default App;
+export default App

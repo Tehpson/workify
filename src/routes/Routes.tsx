@@ -1,10 +1,10 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { SignIn } from "../view/signin/SignIn"
-import {Index as homeView} from '../view/home/homeView'
-import {View404} from '../view/404view/404View'
+import { Index as homeView } from '../view/home/homeView'
+import { View404 } from '../view/404view/404View'
 import RoutingPath from './RoutingPath'
 import { UserContext } from '../provider/UserProvider'
-import { CreateWorkoutView} from '../view/createWorkoutView/CreateWorkoutView'
+import { CreateWorkoutView } from '../view/createWorkoutView/CreateWorkoutView'
 import React from 'react'
 import { useContext, useEffect } from 'react'
 
@@ -18,9 +18,17 @@ export const Routes = (props: { children?: React.ReactChild }) => {
 		<BrowserRouter>
 			{props.children}
 			<Switch>
-				<Route exact path={RoutingPath.homeView} component={ReturnView()} />
-				<Route exact path={RoutingPath.createWorkoutView} component={CreateWorkoutView} />
-				<Route component={View404} />
+				<Route
+					exact path={RoutingPath.homeView}
+					component={ReturnView()}
+				/>
+				<Route
+					exact path={RoutingPath.createWorkoutView}
+					component={CreateWorkoutView}
+				/>
+				<Route
+					component={View404}
+				/>
 			</Switch>
 		</BrowserRouter>
 	)

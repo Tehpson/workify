@@ -5,7 +5,9 @@ export const Register = () => {
   return (
     <Wrapper>
       <div>
-        <h1>Register</h1>
+        <h1>
+          Register
+        </h1>
       </div>
     </Wrapper>
   );
