@@ -1,5 +1,9 @@
 import http from '../WorkifyAPI'
 
+const getuserTest=()=>{
+	return http.get('/user');
+}
+
 const RequestLogin = (username:string, password:string) => {
 	const data = {
 		email: username,
@@ -40,5 +44,6 @@ export default{
 	CreateUser,
 	GetallWorkouts,
 	GetWorkout,
-	AddWorkout
+	AddWorkout,
+	getuserTest
 }

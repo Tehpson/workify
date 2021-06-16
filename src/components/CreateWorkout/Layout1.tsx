@@ -21,6 +21,16 @@ export const Layout1 = () => {
 		} catch (error) {
 			console.log(error)
 		}
+	}	
+	
+	const test = async () => {
+		try {
+			const { data } = await WorkifyAPIService.getuserTest()
+			console.log(data)
+			setServerRespons(data)
+		} catch (error) {
+			console.log(error)
+		}
 	}
 
 
@@ -35,6 +45,7 @@ return (
 			<div className="CWtimeofpost">{new Date().getTime} - {new Date().getDate}</div>
 		</div>
 		<button className="CWButton" onClick={() => sendData()}>AddWorkout</button>
+		<button className="CWButton" onClick={() => test()}>test</button>
 	</body>
 )
 }
