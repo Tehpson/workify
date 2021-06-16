@@ -27,8 +27,13 @@ export const Index = () => {
     }
   };
   const displayData = ()=>{
-      serverRespons?.results?.map((item:any)=>
-      <Layout1 />)
+    if(serverRespons?.results == null){
+      return(
+        <div>No workout yet</div>
+        )
+    }
+    serverRespons?.results?.map((item:any)=>
+    <div className='Layout'><Layout1 /></div>)
 }
 
   return (
@@ -37,7 +42,7 @@ export const Index = () => {
       <img className="ProfilePicture" src={Avatar} alt="error.." />
       <span className="userName">User Name</span>
       <span className="bio">Bio</span>
-      {displayData()}
+      <div className='DisplayData'>{displayData()}</div>
       <button className="postButton">Post</button>
     </div>
   );
