@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import {
   BoldLink,
@@ -11,15 +11,21 @@ import {
 import { Marginer } from '../marginer';
 import { AccountContext } from './accountContext';
 import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService';
+import { ServerResponse } from 'node:http';
 
 export function SignupForm(props: any) {
   const { switchToSignin } = useContext(AccountContext);
   const [credentials, setCrendatials] = useState({email:"", username:"", password:"",confirmPassword:""})
   const [serverResponse, setserverResponse] = useState<any>()
+  useEffect(() => {
+    
+  }, [serverResponse])
   const ConfirmPassword=()=>{
     if(credentials.password==credentials.confirmPassword){
+      ConfirmLogin()
 
     }
+    else{console.log("Password does not match")}
   }
   const ConfirmLogin = async () => {
 		try {
