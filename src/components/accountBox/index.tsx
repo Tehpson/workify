@@ -148,6 +148,7 @@ export function AccountBox(props: any) {
             <HeaderContainer>
               <HeaderText>Create</HeaderText>
               <HeaderText>Account</HeaderText>
+              <HeaderText>Make training more social</HeaderText>
               <SmallText>Please sign-up to continue!</SmallText>
             </HeaderContainer>
           )}

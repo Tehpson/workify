@@ -1,3 +1,4 @@
+
 const homeView = '/'
 const createWorkoutView = '/createworkout'
 

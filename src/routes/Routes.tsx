@@ -25,3 +25,4 @@ export const Routes = (props: { children?: React.ReactChild }) => {
 		</BrowserRouter>
 	)
 }
+

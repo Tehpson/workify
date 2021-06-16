@@ -40,10 +40,10 @@ const AddWorkout = (userID:string,title:string,comment:string, time:number,layou
 }
 
 export default{
-	RequestLogin,
 	CreateUser,
 	GetallWorkouts,
 	GetWorkout,
 	AddWorkout,
-	getuserTest
+	getuserTest,
+	RequestLogin
 }
