@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+
 import {
   BoldLink,
   BoxContainer,
@@ -9,10 +10,26 @@ import {
 } from './Style';
 import { Marginer } from '../marginer';
 import { AccountContext } from './accountContext';
+import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService';
 
 export function SignupForm(props: any) {
   const { switchToSignin } = useContext(AccountContext);
-  const [crendatials, setCrendatials] = useState<string>({email, username, password})
+  const [crendatials, setCrendatials] = useState({email:"", username:"", password:"",confirmPassword:""})
+  const ConfirmPassword()=>{
+    if(crendatials.password==crendatials.confirmPassword){
+
+    }
+  }
+  const ConfirmLogin = async () => {
+		try {
+			const { data } = await WorkifyAPIService.RequestLogin(
+				authebticatedUser
+			);
+			setServerRespons(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
   return (
     <BoxContainer>
