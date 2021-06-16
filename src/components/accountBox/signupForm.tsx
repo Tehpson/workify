@@ -14,22 +14,22 @@ import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService';
 
 export function SignupForm(props: any) {
   const { switchToSignin } = useContext(AccountContext);
-  const [crendatials, setCrendatials] = useState({email:"", username:"", password:"",confirmPassword:""})
-  const ConfirmPassword()=>{
-    if(crendatials.password==crendatials.confirmPassword){
+  const [credentials, setCrendatials] = useState({email:"", username:"", password:"",confirmPassword:""})
+  const [serverResponse, setserverResponse] = useState<any>()
+  const ConfirmPassword=()=>{
+    if(credentials.password==credentials.confirmPassword){
 
     }
   }
   const ConfirmLogin = async () => {
 		try {
-			const { data } = await WorkifyAPIService.RequestLogin(
-				authebticatedUser
-			);
-			setServerRespons(data);
+			const { data } = await WorkifyAPIService.CreateUser(credentials.username, credentials.password, credentials.email,);
+			setserverResponse(data);
 		} catch (error) {
 			console.log(error);
 		}
 	};
+
 
   return (
     <BoxContainer>
