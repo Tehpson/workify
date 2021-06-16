@@ -3,20 +3,25 @@ import './HomeView.css'
 import Avatar from '../../assets/image/avatar.png'
 import { useEffect } from 'react'
 import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService'
+import {UserContext} from '../../provider/UserProvider'
+import {useContext, useState} from 'react'
 
 export const Index = () => {
+	const [authebticatedUser, setAuthebticatedUser] = useContext(UserContext)
+	const [serverRespons, setServerRespons] = useState<any>(null)
+
     useEffect(() => {
         
     }, [])
 
     const fetchWorkoutData = async () => {
         try {
-            const data = await {
-                
-            }
+            const {data} = await WorkifyAPIService.GetallWorkouts(authebticatedUser)
+			setServerRespons(data)
+            
         }
-        catch {
-
+        catch (error){
+			console.log(error)
         }
     }
 
