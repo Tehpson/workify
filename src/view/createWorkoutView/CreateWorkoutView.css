@@ -1,7 +1,13 @@
 .CreateWorkoutViewWrapper{
+	display: grid;
     max-width: 80vw;
-    height: 100%;
+    height: 100vh;
     margin: 0 auto;
     background-color: #198a92;
+	grid-template-rows:  repeat(3,1fr);
 }
 
+.Layoutcss{
+    grid-row: 2/3;
+    align-self: center;
+}

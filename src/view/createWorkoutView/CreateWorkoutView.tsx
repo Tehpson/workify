@@ -4,7 +4,9 @@ import { Layout1 } from '../../components/CreateWorkout/Layout1'
 export const CreateWorkoutView = () => {
 	return (
 		<div className="CreateWorkoutViewWrapper">
-			<Layout1/>
+			<div className="Layoutcss">
+				<Layout1 />
+			</div>
 		</div>
 	)
 }
