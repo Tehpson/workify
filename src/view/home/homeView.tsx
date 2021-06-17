@@ -20,6 +20,7 @@ export const Index = () => {
 
 	useEffect(() => {
 		fetchWorkoutData()
+		getUserName()
 	}, [])
 
 	const fetchWorkoutData = async () => {
@@ -50,10 +51,6 @@ export const Index = () => {
 		)
 	}
 
-	useEffect(() => {
-		getUserName()
-	}, [])
-
 	const getUserName = async () => {
 		try{
 			const { data } = await WorkifyAPIService.GetUser(
@@ -62,6 +59,7 @@ export const Index = () => {
 			setUserResponse(
 				data
 			)
+			console.log(userResponse)
 		}
 		catch (error) {
 			console.log(error)
@@ -79,11 +77,11 @@ export const Index = () => {
 			/>
 			<span
 				className="userName">
-				{userResponse?.results?.username}
+				{userResponse?.username}
 			</span>
 			<span
 				className="bio">
-				{userResponse?.results?.bio}
+				{userResponse?.bio}
 			</span>
 			<div
 				className='DisplayData'>
