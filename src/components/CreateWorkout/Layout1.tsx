@@ -23,16 +23,6 @@ export const Layout1 = () => {
 		}
 	}
 
-	const test = async () => {
-		try {
-			const { data } = await WorkifyAPIService.GetUser()
-			console.log(data)
-			setServerResponse(data)
-		} catch (error) {
-			console.log(error)
-		}
-	}
-
 
 	return (
 		<body
@@ -73,9 +63,6 @@ export const Layout1 = () => {
 			</div>
 			<button
 				className="CWButton" onClick={() => sendData()}>AddWorkout
-			</button>
-			<button
-				className="CWButton" onClick={() => test()}>test
 			</button>
 		</body>
 	)

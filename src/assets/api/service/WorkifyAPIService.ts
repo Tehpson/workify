@@ -1,7 +1,7 @@
 import http from '../WorkifyAPI'
 
-const GetUser = () => {
-	return http.get('/user');
+const GetUser = (userID: string) => {
+	return http.get(`/user/${userID}`);
 }
 
 const RequestLogin = (username: string, password: string) => {
