@@ -1,4 +1,4 @@
-.CWcontainer{
+.SWcontainer{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(3,1fr);
@@ -7,7 +7,7 @@
     background-color: #0b1c33;
 }
 
-.CWusername{
+.SWusername{
     font-size: 25px;
     align-self: center;
     justify-self: center;
@@ -16,7 +16,7 @@
     color: rgb(255, 255, 255);
 }
 
-.CWtimeofpost{
+.SWtimeofpost{
     font-size: 25px;
     justify-self: left;
     align-self: center;
@@ -25,7 +25,7 @@
     color: rgb(255, 255, 255);
 }
 
-.CWpost{
+.SWpost{
     word-wrap: break-word;
     font-size: 25px;
     grid-column: 3/6;
@@ -33,7 +33,7 @@
     color: rgb(255, 255, 255);
 }
 
-.CWtitle{
+.SWtitle{
     font-size: 50px;
     justify-self: center;
     align-self: center;
@@ -42,9 +42,14 @@
     color: rgb(255, 255, 255);
 }
 
-.CWtime{
+.SWtime{
     align-self: center;
     grid-column: 3/4;
     grid-row: 1/2;
     color: rgb(255, 255, 255);
+}
+.SWButton{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    height: 25px;
 }
