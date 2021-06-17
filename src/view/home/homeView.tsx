@@ -59,7 +59,6 @@ export const Index = () => {
 			setUserResponse(
 				data
 			)
-			console.log(userResponse)
 		}
 		catch (error) {
 			console.log(error)
