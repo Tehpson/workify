@@ -8,11 +8,13 @@ import { useContext, useState } from 'react'
 import { Layout1 } from '../../components/showWorkout/Layout1'
 import { useHistory } from 'react-router-dom'
 import RoutingPath from '../../routes/RoutingPath'
+import { UserProvider } from '../../provider/UserProvider'
 
 
 export const Index = () => {
 	const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
 	const [serverResponse, setServerResponse] = useState<any>(null)
+	const [userResponse, setUserResponse] = useState<any>(null)
 	const history = useHistory()
 
 
@@ -32,6 +34,7 @@ export const Index = () => {
 			console.log(error)
 		}
 	}
+
 	const displayData = () => {
 		if (serverResponse?.results == null) {
 			return (
@@ -47,6 +50,24 @@ export const Index = () => {
 		)
 	}
 
+	useEffect(() => {
+		getUserName()
+	}, [])
+
+	const getUserName = async () => {
+		try{
+			const { data } = await WorkifyAPIService.GetUser(
+				authenticatedUser
+			)
+			setUserResponse(
+				data
+			)
+		}
+		catch (error) {
+			console.log(error)
+		}
+	}
+
 	return (
 
 		<div
@@ -54,15 +75,15 @@ export const Index = () => {
 			<img
 				className="ProfilePicture"
 				src={Avatar}
-				alt="error.."
+				alt="ProfilePicture"
 			/>
 			<span
 				className="userName">
-					User Name
+				{userResponse?.results?.username}
 			</span>
 			<span
 				className="bio">
-					Bio
+				{userResponse?.results?.bio}
 			</span>
 			<div
 				className='DisplayData'>
@@ -71,7 +92,7 @@ export const Index = () => {
 			<button
 				className="postButton"
 				onClick={() => history.push(RoutingPath.createWorkoutView)}>
-					Post
+				Post
 			</button>
 		</div>
 	)
