@@ -9,7 +9,7 @@ export const SignIn = (props: any) => {
     <Wrapper>
       <button
         onClick={() => { setAuthenticatedUser("1") }}>
-          ACCSES HomeView
+          ACCESS HomeView
       </button> {/* Temp tills det går att logga in */}
       <AccountBox />
     </Wrapper>
