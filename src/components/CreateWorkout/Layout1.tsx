@@ -25,7 +25,7 @@ export const Layout1 = () => {
 
 	const test = async () => {
 		try {
-			const { data } = await WorkifyAPIService.GetUserTest()
+			const { data } = await WorkifyAPIService.GetUser()
 			console.log(data)
 			setServerResponse(data)
 		} catch (error) {
