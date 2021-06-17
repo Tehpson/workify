@@ -9,6 +9,7 @@ import { Layout1 } from '../../components/showWorkout/Layout1'
 import { useHistory } from 'react-router-dom'
 import RoutingPath from '../../routes/RoutingPath'
 import { UserProvider } from '../../provider/UserProvider'
+import { getTsBuildInfoEmitOutputFilePath } from 'typescript'
 
 
 export const Index = () => {
@@ -37,22 +38,27 @@ export const Index = () => {
 	}
 
 	const displayData = () => {
-		if (serverResponse?.results == null) {
+		if (serverResponse == null) {
 			return (
 				<div>
 					No workout yet
 				</div>
 			)
+		} else {
+
+			return (
+				serverResponse?.map((item: any) =>
+					<div className='Layout'>
+						<Layout1 userName={item.user.username} Comment={item.comment} Title={item.title} Time={item.time} Date={item.date} />
+					</div>
+				)
+			)
 		}
-		serverResponse?.results?.map((item: any) =>
-			<div
-				className='Layout'><Layout1 />
-			</div>
-		)
+
 	}
 
 	const getUserName = async () => {
-		try{
+		try {
 			const { data } = await WorkifyAPIService.GetUser(
 				authenticatedUser
 			)
@@ -64,6 +70,15 @@ export const Index = () => {
 			console.log(error)
 		}
 	}
+	
+	function calcuteTotaltime() {
+		var tot = 0
+		serverResponse?.map((item: any) => { tot = tot + Number.parseInt(item.time,10) })
+		return tot
+	}	
+	
+
+
 
 	return (
 
@@ -82,6 +97,10 @@ export const Index = () => {
 				className="bio">
 				{userResponse?.bio}
 			</span>
+			<div className="homeTotlaWorkout">
+				Your total Workout Time is: {calcuteTotaltime()} min <br/>
+				Your total Number of workout is: {serverResponse?.length} min
+			</div>
 			<div
 				className='DisplayData'>
 				{displayData()}

@@ -18,6 +18,7 @@ export const Layout1 = (props: any) => {
 				<h1
 					className="SWtime">{props.Time}
 				</h1>
+				<h1 className="SWtimeName">min</h1>
 				<div
 					className="SWtimeofpost">{props.Date}
 				</div>
