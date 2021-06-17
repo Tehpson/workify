@@ -1,6 +1,6 @@
 import http from '../WorkifyAPI'
 
-const GetUserTest = () => {
+const GetUser = () => {
 	return http.get('/user');
 }
 
@@ -40,11 +40,12 @@ const AddWorkout = (userID: string, title: string, comment: string, time: number
 	return http.post(`/user/yeeet}/WorkoutData}`, data)
 }
 
+
 export default {
 	CreateUser,
 	GetallWorkouts,
 	GetWorkout,
 	AddWorkout,
-	GetUserTest,
+	GetUser,
 	RequestLogin
 }
