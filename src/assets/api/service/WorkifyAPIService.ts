@@ -37,7 +37,7 @@ const AddWorkout = (userID: string, title: string, comment: string, time: number
 		comment: comment,
 		layout: layout,
 	}
-	return http.post(`/user/yeeet}/WorkoutData}`, data)
+	return http.post(`/user/${userID}/WorkoutData}`, data)
 }
 
 
