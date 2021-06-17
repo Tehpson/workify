@@ -15,7 +15,7 @@ export const Layout1 = () => {
 
 	const sendData = async () => {
 		try {
-			const { data } = await WorkifyAPIService.AddWorkout(authenticatedUser, title, bodyText, time, 1)
+			const { data } = await WorkifyAPIService.AddWorkout(authenticatedUser.uID, title, bodyText, time, 1)
 			console.log(data)
 			setServerResponse(data)
 		} catch (error) {
@@ -40,7 +40,7 @@ export const Layout1 = () => {
 			<div
 				className="CWcontainer w-container">
 				<h1
-					className="CWusername">Tehpson</h1>
+					className="CWusername">{authenticatedUser.username}</h1>
 				<textarea
 					placeholder="Describe your workout"
 					rows={4}
