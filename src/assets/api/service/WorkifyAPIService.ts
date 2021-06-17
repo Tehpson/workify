@@ -1,3 +1,4 @@
+import internal from 'stream';
 import http from '../WorkifyAPI'
 
 const GetUser = (userID: string) => {
@@ -22,22 +23,21 @@ const CreateUser = (username: string, password: string, email: string) => {
 }
 
 const GetallWorkouts = (userID: string) => {
-	return http.get(`/user/${userID}/WorkoutData`)
+	return http.get(`/user/${userID}/workoutdata`)
 }
 
 const GetWorkout = (userID: string, workoutID: string) => {
-	return http.get(`/user/${userID}/WorkoutData/${workoutID}`)
+	return http.get(`/user/${userID}/workoutdata/${workoutID}`)
 }
 
 const AddWorkout = (userID: string, title: string, comment: string, time: number, layout: number) => {
 	const data = {
 		title: title,
-		date: new Date().getDate.toString() + new Date().getTime.toString(),
-		time: time,
+		time: time.toString(),
 		comment: comment,
-		layout: layout,
+		layout: Number.parseInt(layout.toString(),10),
 	}
-	return http.post(`/user/${userID}/WorkoutData}`, data)
+	return http.post(`/user/${userID}/workoutdata`, data)
 }
 
 

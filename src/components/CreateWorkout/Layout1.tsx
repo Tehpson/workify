@@ -2,12 +2,10 @@ import { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../../provider/UserProvider'
 import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService'
 import "./Layout1.css"
-import { useLocation } from 'react-router-dom';
 
 export const Layout1 = (props: any) => {
 	const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
 	const [userRepons, setUserRepons] = useState<any>(null)
-	const location = useLocation<any>()
 	const [title, setTitle] = useState<string>("")
 	const [time, setTime] = useState<number>(0)
 	const [bodyText, setBodyText] = useState<string>("")
@@ -21,13 +19,11 @@ export const Layout1 = (props: any) => {
 
 
 	const sendData = async () => {
-		console.log(location?.state)
 		try {
-			const { data } = await WorkifyAPIService.AddWorkout(authenticatedUser.uID, title, bodyText, time, 1)
+			const { data } = await WorkifyAPIService.AddWorkout(authenticatedUser, title, bodyText, time, 1)
 			console.log(data)
 			setServerResponse(data)
 		} catch (error) {
-			console.log(error)
 		}
 	}
 
