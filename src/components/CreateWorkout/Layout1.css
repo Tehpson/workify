@@ -49,16 +49,25 @@
     grid-column: 3/4;
     grid-row: 1/2;
     color: rgb(0, 0, 0);
+    width: 40px;
+    margin: 15px;
 }
 
 .CWtimeName {
     align-self: center;
-    grid-column: 4/4;
+    grid-column: 3/3;
     grid-row: 1/2;
     color: #fff;
+    padding-left: 60px;
+    padding-bottom: 5px;
 }
 .CWButton{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    height: 25px;
+    background-color: #0b1c33;
+    color: rgb(255, 255, 255);
+    height: 50px;
+    border-radius: 20px;
+    align-self: center;
+    font-size: 24px;
+    width: 200px;
+    height: 50px;
 }
