@@ -1,24 +1,46 @@
-import { number } from "yargs"
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../../provider/UserProvider'
 import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService'
 import "./Layout1.css"
-import { render } from "@testing-library/react"
+import { useLocation } from 'react-router-dom';
 
-export const Layout1 = () => {
+export const Layout1 = (props: any) => {
 	const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
+	const [userRepons, setUserRepons] = useState<any>(null)
+	const location = useLocation<any>()
 	const [title, setTitle] = useState<string>("")
 	const [time, setTime] = useState<number>(0)
 	const [bodyText, setBodyText] = useState<string>("")
 	const date = new Date()
 	const [serverResponse, setServerResponse] = useState<any>()
 
+
+	useEffect(() => {
+		getUserName()
+	}, [])
+
+
 	const sendData = async () => {
+		console.log(location?.state)
 		try {
 			const { data } = await WorkifyAPIService.AddWorkout(authenticatedUser.uID, title, bodyText, time, 1)
 			console.log(data)
 			setServerResponse(data)
 		} catch (error) {
+			console.log(error)
+		}
+	}
+
+	const getUserName = async () => {
+		try{
+			const { data } = await WorkifyAPIService.GetUser(
+				authenticatedUser
+			)
+			setUserRepons(
+				data
+			)
+		}
+		catch (error) {
 			console.log(error)
 		}
 	}
@@ -30,7 +52,7 @@ export const Layout1 = () => {
 			<div
 				className="CWcontainer w-container">
 				<h1
-					className="CWusername">{authenticatedUser.username}</h1>
+					className="CWusername">{userRepons?.username}</h1>
 				<textarea
 					placeholder="Describe your workout"
 					rows={4}

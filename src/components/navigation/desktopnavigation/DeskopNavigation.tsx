@@ -4,7 +4,7 @@ import Workify from '../../../assets/image/Workify.png'
 export const DeskopNavigation = () => {
   return (
     <div className='desktopNavigationWrapper'>
-      <img src={Workify} alt='Logotype' />
+      <h3 className='siteTitle'>WORKIFY</h3>
     </div>
   )
 }
