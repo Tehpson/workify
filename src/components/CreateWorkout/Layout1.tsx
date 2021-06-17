@@ -64,7 +64,7 @@ export const Layout1 = (props: any) => {
 					onChange={event => setTitle(event.target.value)}>
 				</input>
 				<input
-					placeholder="Workout time"
+					placeholder="#"
 					max={99999}
 					min={0}
 					maxLength={5}
