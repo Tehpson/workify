@@ -51,6 +51,7 @@
     color: rgb(0, 0, 0);
     width: 40px;
     margin: 15px;
+	z-index: 2;
 }
 
 .CWtimeName {
@@ -60,6 +61,7 @@
     color: #fff;
     padding-left: 60px;
     padding-bottom: 5px;
+	z-index: 1;
 }
 .CWButton{
     background-color: #0b1c33;

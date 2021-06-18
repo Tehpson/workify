@@ -99,7 +99,7 @@ export const Index = () => {
 			</span>
 			<div className="homeTotlaWorkout">
 				Your total Workout Time is: {calcuteTotaltime()} min <br/>
-				Your total Number of workout is: {serverResponse?.length} min
+				Your total Number of workout is: {serverResponse?.length}
 			</div>
 			<div
 				className='DisplayData'>

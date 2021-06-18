@@ -13,6 +13,7 @@ export const Routes = (props: { children?: React.ReactChild }) => {
 
 
 	const ReturnView = () => { return authebticatedUser ? homeView : SignIn }
+	const unAuthenticatedUserRout = (view:React.FC) =>{ return authebticatedUser ? view : SignIn}
 
 	return (
 		<BrowserRouter>
@@ -24,7 +25,7 @@ export const Routes = (props: { children?: React.ReactChild }) => {
 				/>
 				<Route
 					exact path={RoutingPath.createWorkoutView}
-					component={CreateWorkoutView}
+					component={unAuthenticatedUserRout(CreateWorkoutView)}
 				/>
 				<Route
 					component={View404}
