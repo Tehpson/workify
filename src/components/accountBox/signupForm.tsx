@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import {
 	BoldLink,
 	BoxContainer,
@@ -12,7 +12,7 @@ import { AccountContext } from './accountContext'
 import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService'
 import { useHistory } from 'react-router-dom'
 import RoutingPath from '../../routes/RoutingPath'
-import {UserContext} from '../../provider/UserProvider'
+import { UserContext } from '../../provider/UserProvider'
 
 
 export function SignupForm(props: any) {
@@ -27,12 +27,12 @@ export function SignupForm(props: any) {
 		confirmPassword: '',
 	})
 	const [serverResponse, setserverResponse] = useState<any>()
-	useEffect(() => { 
-		if(serverResponse.status == 200){
+	useEffect(() => {
+		if (serverResponse.status == 200) {
 			setAuthenticatedUser(serverResponse?.data)
 		}
 		history.push(RoutingPath.homeView)
-	 }, [serverResponse])
+	}, [serverResponse])
 
 	const ConfirmPassword = () => {
 		if (credentials.password == credentials.confirmPassword) {

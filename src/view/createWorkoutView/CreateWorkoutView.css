@@ -1,14 +1,14 @@
-.CreateWorkoutViewWrapper{
-	display: grid;
+.CreateWorkoutViewWrapper {
+    display: grid;
     max-width: 80vw;
     height: 100vh;
     margin: 0 auto;
     background-color: #198a92;
     min-width: 1000px;
-	grid-template-rows:  repeat(3,1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
-.Layoutcss{
+.Layoutcss {
     grid-row: 2/3;
     align-self: center;
     min-width: 1000px;

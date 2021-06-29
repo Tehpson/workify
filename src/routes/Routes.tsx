@@ -6,14 +6,14 @@ import RoutingPath from './RoutingPath'
 import { UserContext } from '../provider/UserProvider'
 import { CreateWorkoutView } from '../view/createWorkoutView/CreateWorkoutView'
 import React from 'react'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 
 export const Routes = (props: { children?: React.ReactChild }) => {
 	const [authebticatedUser, setAuthebticatedUser] = useContext(UserContext)
 
 
 	const ReturnView = () => { return authebticatedUser ? homeView : SignIn }
-	const unAuthenticatedUserRout = (view:React.FC) =>{ return authebticatedUser ? view : SignIn}
+	const unAuthenticatedUserRout = (view: React.FC) => { return authebticatedUser ? view : SignIn }
 
 	return (
 		<BrowserRouter>
