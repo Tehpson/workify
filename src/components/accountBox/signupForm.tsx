@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react'
 import {
 	BoldLink,
 	BoxContainer,
@@ -6,54 +6,54 @@ import {
 	Input,
 	MutedLink,
 	SubmitButton,
-} from './Style';
-import { Marginer } from '../marginer';
-import { AccountContext } from './accountContext';
-import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService';
-import { useHistory } from 'react-router-dom';
-import RoutingPath from '../../routes/RoutingPath';
-import {UserContext} from '../../provider/UserProvider'
+} from './Style'
+import { Marginer } from '../marginer'
+import { AccountContext } from './accountContext'
+import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService'
+import { useHistory } from 'react-router-dom'
+import RoutingPath from '../../routes/RoutingPath'
+import { UserContext } from '../../provider/UserProvider'
 
 
 export function SignupForm(props: any) {
 	const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
 
-	const { switchToSignin } = useContext(AccountContext);
+	const { switchToSignin } = useContext(AccountContext)
 	const history = useHistory()
 	const [credentials, setCrendatials] = useState({
 		email: '',
 		username: '',
 		password: '',
 		confirmPassword: '',
-	});
-	const [serverResponse, setserverResponse] = useState<any>();
-	useEffect(() => { 
-		if(serverResponse.status == 200){
-			setAuthenticatedUser(serverResponse?.data);
+	})
+	const [serverResponse, setserverResponse] = useState<any>()
+	useEffect(() => {
+		if (serverResponse.status == 200) {
+			setAuthenticatedUser(serverResponse?.data)
 		}
 		history.push(RoutingPath.homeView)
-	 }, [serverResponse]);
+	}, [serverResponse])
 
 	const ConfirmPassword = () => {
 		if (credentials.password == credentials.confirmPassword) {
-			ConfirmLogin();
+			ConfirmLogin()
 		} else {
-			console.log('Password does not match');
+			console.log('Password does not match')
 		}
-	};
+	}
 	const ConfirmLogin = async () => {
 		try {
 			const data = await WorkifyAPIService.CreateUser(
 				credentials.username,
 				credentials.password,
 				credentials.email
-			);
-			setserverResponse(data);
+			)
+			setserverResponse(data)
 
 		} catch (error) {
-			console.log(error);
+			console.log(error)
 		}
-	};
+	}
 
 	return (
 		<BoxContainer>
@@ -120,7 +120,7 @@ export function SignupForm(props: any) {
 				</BoldLink>
 			</MutedLink>
 		</BoxContainer>
-	);
+	)
 }
 
 

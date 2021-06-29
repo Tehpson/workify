@@ -1,8 +1,8 @@
-import internal from 'stream';
+import internal from 'stream'
 import http from '../WorkifyAPI'
 
 const GetUser = (userID: string) => {
-	return http.get(`/user/${userID}`);
+	return http.get(`/user/${userID}`)
 }
 
 const RequestLogin = (username: string, password: string) => {

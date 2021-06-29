@@ -21,21 +21,21 @@ export const Layout1 = (props: any) => {
 	}, [])
 
 	useEffect(() => {
-		if ( serverResponse?.status == 200){history.push(RoutingPath.homeView)}
+		if (serverResponse?.status == 200) { history.push(RoutingPath.homeView) }
 	}, [serverResponse])
 
 
 	const sendData = async () => {
 		try {
 			setServerResponse(await WorkifyAPIService.AddWorkout(authenticatedUser, title, bodyText, time, 1))
-			
+
 		} catch (error) {
 			console.log(error)
 		}
 	}
 
 	const getUserName = async () => {
-		try{
+		try {
 			const { data } = await WorkifyAPIService.GetUser(
 				authenticatedUser
 			)

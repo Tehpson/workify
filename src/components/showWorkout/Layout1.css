@@ -5,7 +5,7 @@
     height: 24vh;
     border-radius: 20px;
     background-color: #0b1c33;
-	min-width: 1000px;
+    min-width: 1000px;
 }
 
 .SWusername {
@@ -33,7 +33,7 @@
     grid-row: 2/4;
     margin: 15px;
     resize: none;
-    color:#FFF;
+    color: #FFF;
 }
 
 .SWtitle {
@@ -62,7 +62,8 @@
     padding-left: 60px;
     padding-bottom: 5px;
 }
-.SWButton{
+
+.SWButton {
     background-color: #0b1c33;
     color: rgb(255, 255, 255);
     height: 50px;

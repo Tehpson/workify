@@ -1,5 +1,5 @@
 const username = 'username'
 
-export default{
+export default {
 	username
 }

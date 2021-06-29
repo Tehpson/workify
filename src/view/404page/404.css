@@ -1,0 +1,39 @@
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    font-size: 25px;
+    transform: translate(-50%, -50%);
+}
+
+.blue {
+    color: #48beef;
+}
+
+.comment {
+    color: #7f8c8d;
+    margin-left: 50px;
+}
+
+.orangeOne {
+    color: #f39c12;
+    margin-left: 10px;
+}
+
+.orangeTwo {
+    color: #f39c12;
+    margin-left: 30px;
+}
+
+.orangeThree {
+    color: #f39c12;
+    margin-left: 50px;
+}
+
+.error404 {
+    margin-left: 70px;
+}
+
+.green {
+    color: #33cc33;
+}

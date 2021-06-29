@@ -3,7 +3,7 @@ const homeView = '/'
 const createWorkoutView = '/createworkout'
 
 
-export default{
+export default {
 	homeView,
 	createWorkoutView
 }

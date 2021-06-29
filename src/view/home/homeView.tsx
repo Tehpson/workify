@@ -1,4 +1,3 @@
-import React from 'react'
 import './HomeView.css'
 import Avatar from '../../assets/image/avatar.png'
 import { useEffect } from 'react'
@@ -64,13 +63,13 @@ export const Index = () => {
 			console.log(error)
 		}
 	}
-	
+
 	function calcuteTotaltime() {
 		var tot = 0
-		serverResponse?.map((item: any) => { tot = tot + Number.parseInt(item.time,10) })
+		serverResponse?.map((item: any) => { tot = tot + Number.parseInt(item.time, 10) })
 		return tot
-	}	
-	
+	}
+
 
 
 
@@ -91,9 +90,9 @@ export const Index = () => {
 				className="bio">
 				{userResponse?.bio}
 			</span>
-			<div className="homeTotlaWorkout">
-				Your total Workout Time is: {calcuteTotaltime()} min <br/>
-				Your total Number of workout is: {serverResponse?.length}
+			<div className="homeTotalWorkout">
+				Total workout time: {calcuteTotaltime()} min <br />
+				Total number of workous: {serverResponse?.length}
 			</div>
 			<div
 				className='DisplayData'>
