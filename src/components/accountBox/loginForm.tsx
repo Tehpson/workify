@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService'
+import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService';
 import {
   BoldLink,
   BoxContainer,
@@ -17,9 +17,9 @@ export const LoginForm = (props: any) => {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const { switchToSignup } = useContext(AccountContext);
   const Login = () => {
-    WorkifyAPIService.RequestLogin(credentials.email, credentials.password)
+    WorkifyAPIService.RequestLogin(credentials.email, credentials.password);
     userHistory.push(RoutingPath.homeView);
-  }
+  };
   // const state = {email: "",password: ""};
   return (
     <BoxContainer>
@@ -50,10 +50,7 @@ export const LoginForm = (props: any) => {
       <Marginer direction="vertical" margin={10} />
       <MutedLink href="#">Forget your password?</MutedLink>
       <Marginer direction="vertical" margin="1.6em" />
-      <SubmitButton
-        type="submit"
-        onClick={() => Login()}
-      >
+      <SubmitButton type="submit" onClick={() => Login()}>
         Signin
       </SubmitButton>
       <Marginer direction="vertical" margin="1em" />
@@ -66,5 +63,3 @@ export const LoginForm = (props: any) => {
     </BoxContainer>
   );
 };
-
-
