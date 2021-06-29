@@ -15,14 +15,28 @@ import { useHistory } from 'react-router-dom';
 import RoutingPath from '../../routes/RoutingPath';
 export const LoginForm = (props: any) => {
 
-  const userHistory = useHistory();
+  const history = useHistory();
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const { switchToSignup } = useContext(AccountContext);
-  const Login = () => {
-    WorkifyAPIService.RequestLogin(credentials.email, credentials.password);
-    userHistory.push(RoutingPath.homeView);
-  };
-  // const state = {email: "",password: ""};
+  const [serverResponse, setServerResponse] = useState<any>()
+  const [errorMSG, setErrorMSG] = useState("")
+
+  const Login = async () => {
+	  try {
+		  setServerResponse(await WorkifyAPIService.RequestLogin(credentials.email, credentials.password))
+
+	  } catch (error) {
+		  console.log(error)
+		  setErrorMSG(error?.status)
+	  }
+  }
+
+
+  useEffect(() => {
+	  history.push(RoutingPath.homeView)
+  }, [serverResponse])
+
+
   return (
     <BoxContainer>
       <FormContainer>
