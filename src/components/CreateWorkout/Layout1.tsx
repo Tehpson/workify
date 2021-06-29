@@ -2,8 +2,11 @@ import { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../../provider/UserProvider'
 import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService'
 import "./Layout1.css"
+import RoutingPath from '../../routes/RoutingPath'
+import { useHistory } from 'react-router-dom'
 
 export const Layout1 = (props: any) => {
+	const history = useHistory()
 	const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
 	const [userRepons, setUserRepons] = useState<any>(null)
 	const [title, setTitle] = useState<string>("")
@@ -17,13 +20,17 @@ export const Layout1 = (props: any) => {
 		getUserName()
 	}, [])
 
+	useEffect(() => {
+		if ( serverResponse?.status == 200){history.push(RoutingPath.homeView)}
+	}, [serverResponse])
+
 
 	const sendData = async () => {
 		try {
-			const { data } = await WorkifyAPIService.AddWorkout(authenticatedUser, title, bodyText, time, 1)
-			console.log(data)
-			setServerResponse(data)
+			setServerResponse(await WorkifyAPIService.AddWorkout(authenticatedUser, title, bodyText, time, 1))
+			
 		} catch (error) {
+			console.log(error)
 		}
 	}
 
@@ -79,9 +86,9 @@ export const Layout1 = (props: any) => {
 					className="CWtimeofpost">{new Date().getTime} - {new Date().getDate}
 				</div>
 			</div>
-			<button
-				className="CWButton" onClick={() => sendData()}>AddWorkout
-			</button>
+			<button className="CWButton" onClick={() => sendData()}>AddWorkout</button>
+			<button onClick={() => 
+			console.log(serverResponse)}>iudasoijd</button>
 		</body>
 	)
 }

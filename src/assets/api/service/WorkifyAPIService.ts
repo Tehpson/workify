@@ -23,25 +23,7 @@ const CreateUser = (username: string, password: string, email: string) => {
 }
 
 const GetallWorkouts = (userID: string) => {
-	/*return http.get(`/user/${userID}/workoutdata`)*/
-	const yeet = {data:[
-		{
-			Title: 'runing',
-			Time: '60',
-			comment: "I did run a lot it was exhusting",
-			Layout: '1',
-			user: {Name: 'Test',Id:1}
-		},
-		{
-			Title: 'Gym',
-			Time: '90',
-			comment: "ugga bugga gym",
-			Layout: '1',
-			user: {Name: 'Test',Id:1}
-		}
-	]
-}
-	return yeet
+	return http.get(`/user/${userID}/workoutdata`)
 }
 
 const GetWorkout = (userID: string, workoutID: string) => {

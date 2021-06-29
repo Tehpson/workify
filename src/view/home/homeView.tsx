@@ -26,12 +26,8 @@ export const Index = () => {
 
 	const fetchWorkoutData = async () => {
 		try {
-			const { data } = await WorkifyAPIService.GetallWorkouts(
-				authenticatedUser
-			)
-			setServerResponse(
-				data
-			)
+			const { data } = await WorkifyAPIService.GetallWorkouts(authenticatedUser)
+			setServerResponse(data)
 		} catch (error) {
 			console.log(error)
 		}
@@ -49,7 +45,8 @@ export const Index = () => {
 			return (
 				serverResponse?.map((item: any) =>
 					<div className='Layout'>
-						<Layout1 userName={item.user.username} Comment={item.comment} Title={item.title} Time={item.time} Date={item.date} />
+						{console.log(item)}
+						<Layout1 userName={userResponse?.username} Comment={item.comment} Title={item.title} Time={item.time} Date={item.date} />
 					</div>
 				)
 			)
@@ -90,12 +87,10 @@ export const Index = () => {
 			/>
 			<span
 				className="userName">
-					Tehpsomn
 				{userResponse?.username}
 			</span>
 			<span
 				className="bio">
-					I am Best at workout såklart ni har ingen chans
 				{userResponse?.bio}
 			</span>
 			<div className="homeTotlaWorkout">
