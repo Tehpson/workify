@@ -87,8 +87,6 @@ export const Layout1 = (props: any) => {
 				</div>
 			</div>
 			<button className="CWButton" onClick={() => sendData()}>AddWorkout</button>
-			<button onClick={() => 
-			console.log(serverResponse)}>iudasoijd</button>
 		</body>
 	)
 }

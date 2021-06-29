@@ -1,18 +1,20 @@
-import React, { useContext, useState } from 'react';
-import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService';
+
+import React, { useContext, useEffect, useState } from 'react';
+import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService'
 import {
-  BoldLink,
-  BoxContainer,
-  FormContainer,
-  Input,
-  MutedLink,
-  SubmitButton,
+	BoldLink,
+	BoxContainer,
+	FormContainer,
+	Input,
+	MutedLink,
+	SubmitButton,
 } from './Style';
 import { Marginer } from '../marginer';
 import { AccountContext } from './accountContext';
 import { useHistory } from 'react-router-dom';
 import RoutingPath from '../../routes/RoutingPath';
 export const LoginForm = (props: any) => {
+
   const userHistory = useHistory();
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const { switchToSignup } = useContext(AccountContext);
