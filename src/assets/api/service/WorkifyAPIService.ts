@@ -23,7 +23,25 @@ const CreateUser = (username: string, password: string, email: string) => {
 }
 
 const GetallWorkouts = (userID: string) => {
-	return http.get(`/user/${userID}/workoutdata`)
+	/*return http.get(`/user/${userID}/workoutdata`)*/
+	const yeet = {data:[
+		{
+			Title: 'runing',
+			Time: '60',
+			comment: "I did run a lot it was exhusting",
+			Layout: '1',
+			user: {Name: 'Test',Id:1}
+		},
+		{
+			Title: 'Gym',
+			Time: '90',
+			comment: "ugga bugga gym",
+			Layout: '1',
+			user: {Name: 'Test',Id:1}
+		}
+	]
+}
+	return yeet
 }
 
 const GetWorkout = (userID: string, workoutID: string) => {
@@ -32,10 +50,10 @@ const GetWorkout = (userID: string, workoutID: string) => {
 
 const AddWorkout = (userID: string, title: string, comment: string, time: number, layout: number) => {
 	const data = {
-		title: title,
-		time: time.toString(),
-		comment: comment,
-		layout: Number.parseInt(layout.toString(),10),
+		Title: title,
+		Time: time.toString(),
+		Comment: comment,
+		Layout: Number.parseInt(layout.toString(), 10),
 	}
 	return http.post(`/user/${userID}/workoutdata`, data)
 }

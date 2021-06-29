@@ -54,7 +54,6 @@ export const Index = () => {
 				)
 			)
 		}
-
 	}
 
 	const getUserName = async () => {
@@ -91,10 +90,12 @@ export const Index = () => {
 			/>
 			<span
 				className="userName">
+					Tehpsomn
 				{userResponse?.username}
 			</span>
 			<span
 				className="bio">
+					I am Best at workout såklart ni har ingen chans
 				{userResponse?.bio}
 			</span>
 			<div className="homeTotlaWorkout">
