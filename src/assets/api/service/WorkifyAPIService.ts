@@ -32,10 +32,10 @@ const GetWorkout = (userID: string, workoutID: string) => {
 
 const AddWorkout = (userID: string, title: string, comment: string, time: number, layout: number) => {
 	const data = {
-		title: title,
-		time: time.toString(),
-		comment: comment,
-		layout: Number.parseInt(layout.toString(),10),
+		Title: title,
+		Time: time.toString(),
+		Comment: comment,
+		Layout: Number.parseInt(layout.toString(), 10),
 	}
 	return http.post(`/user/${userID}/workoutdata`, data)
 }
