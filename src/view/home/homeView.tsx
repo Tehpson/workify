@@ -8,8 +8,6 @@ import { useContext, useState } from 'react'
 import { Layout1 } from '../../components/showWorkout/Layout1'
 import { useHistory } from 'react-router-dom'
 import RoutingPath from '../../routes/RoutingPath'
-import { UserProvider } from '../../provider/UserProvider'
-import { getTsBuildInfoEmitOutputFilePath } from 'typescript'
 
 
 export const Index = () => {
