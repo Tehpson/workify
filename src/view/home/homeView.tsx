@@ -1,4 +1,3 @@
-import React from 'react'
 import './HomeView.css'
 import Avatar from '../../assets/image/avatar.png'
 import { useEffect } from 'react'
@@ -8,8 +7,6 @@ import { useContext, useState } from 'react'
 import { Layout1 } from '../../components/showWorkout/Layout1'
 import { useHistory } from 'react-router-dom'
 import RoutingPath from '../../routes/RoutingPath'
-import { UserProvider } from '../../provider/UserProvider'
-import { getTsBuildInfoEmitOutputFilePath } from 'typescript'
 
 
 export const Index = () => {
@@ -66,13 +63,13 @@ export const Index = () => {
 			console.log(error)
 		}
 	}
-	
+
 	function calcuteTotaltime() {
 		var tot = 0
-		serverResponse?.map((item: any) => { tot = tot + Number.parseInt(item.time,10) })
+		serverResponse?.map((item: any) => { tot = tot + Number.parseInt(item.time, 10) })
 		return tot
-	}	
-	
+	}
+
 
 
 
@@ -94,7 +91,7 @@ export const Index = () => {
 				{userResponse?.bio}
 			</span>
 			<div className="homeTotalWorkout">
-				Total workout time: {calcuteTotaltime()} min <br/>
+				Total workout time: {calcuteTotaltime()} min <br />
 				Total number of workous: {serverResponse?.length}
 			</div>
 			<div

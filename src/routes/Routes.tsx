@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { SignIn } from "../view/signin/SignIn"
 import { Index as homeView } from '../view/home/homeView'
-import { View404 } from '../view/404view/404View'
+import { page404 } from '../view/404page/404'
 import RoutingPath from './RoutingPath'
 import { UserContext } from '../provider/UserProvider'
 import { CreateWorkoutView } from '../view/createWorkoutView/CreateWorkoutView'
@@ -28,7 +28,7 @@ export const Routes = (props: { children?: React.ReactChild }) => {
 					component={unAuthenticatedUserRout(CreateWorkoutView)}
 				/>
 				<Route
-					component={View404}
+					component={page404}
 				/>
 			</Switch>
 		</BrowserRouter>

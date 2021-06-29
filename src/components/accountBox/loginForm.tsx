@@ -2,12 +2,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService'
 import {
-	BoldLink,
-	BoxContainer,
-	FormContainer,
-	Input,
-	MutedLink,
-	SubmitButton,
+  BoldLink,
+  BoxContainer,
+  FormContainer,
+  Input,
+  MutedLink,
+  SubmitButton,
 } from './Style'
 import { Marginer } from '../marginer'
 import { AccountContext } from './accountContext'
@@ -22,18 +22,18 @@ export const LoginForm = (props: any) => {
   const [errorMSG, setErrorMSG] = useState("")
 
   const Login = async () => {
-	  try {
-		  setServerResponse(await WorkifyAPIService.RequestLogin(credentials.email, credentials.password))
+    try {
+      setServerResponse(await WorkifyAPIService.RequestLogin(credentials.email, credentials.password))
 
-	  } catch (error) {
-		  console.log(error)
-		  setErrorMSG(error?.status)
-	  }
+    } catch (error) {
+      console.log(error)
+      setErrorMSG(error?.status)
+    }
   }
 
 
   useEffect(() => {
-	  history.push(RoutingPath.homeView)
+    history.push(RoutingPath.homeView)
   }, [serverResponse])
 
 
