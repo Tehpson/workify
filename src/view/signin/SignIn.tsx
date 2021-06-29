@@ -7,10 +7,6 @@ export const SignIn = (props: any) => {
   const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext)
   return (
     <Wrapper>
-      <button
-        onClick={() => { setAuthenticatedUser("1") }}>
-          ACCESS HomeView
-      </button> {/* Temp tills det går att logga in */}
       <AccountBox />
     </Wrapper>
   )
