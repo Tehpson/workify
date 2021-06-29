@@ -1,7 +1,9 @@
-const signIn = '/signin'
+
 const homeView = '/'
+const createWorkoutView = '/createworkout'
 
 
-export default{
-	signIn,
+export default {
+	homeView,
+	createWorkoutView
 }

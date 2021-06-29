@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import styled from 'styled-components';
-import { LoginForm } from './loginForm';
-import { motion } from 'framer-motion';
-import { AccountContext } from './accountContext';
-import { SignupForm } from './signupForm';
+import { useState } from 'react'
+import styled from 'styled-components'
+import { LoginForm } from './loginForm'
+import { motion } from 'framer-motion'
+import { AccountContext } from './accountContext'
+import { SignupForm } from './signupForm'
 
 const BoxContainer = styled.div`
-  width: 380px;
+  width: 680px;
   min-height: 550px;
   display: grid | inline-grid;
   grid-template-columns: 100px 50px 100px;
@@ -15,7 +15,7 @@ const BoxContainer = styled.div`
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
   overflow: hidden;
-`;
+`
 
 const TopContainer = styled.div`
   width: 100%;
@@ -25,7 +25,7 @@ const TopContainer = styled.div`
   justify-content: flex-end;
   padding: 0 1.8em;
   padding-bottom: 5em;
-`;
+`
 
 const BackDrop = styled(motion.div)`
   width: 160%;
@@ -35,7 +35,7 @@ const BackDrop = styled(motion.div)`
   flex-direction: column;
   border-radius: 50%;
   transform: rotate(60deg);
-  top: -290px;
+  top: -520px;
   left: -70px;
   background: rgb(241, 196, 15);
   background: linear-gradient(
@@ -43,14 +43,13 @@ const BackDrop = styled(motion.div)`
     rgba(241, 196, 15, 1) 20%,
     rgba(243, 172, 18, 1) 100%
   );
-`;
+`
 
 const HeaderContainer = styled.div`
   width: 100%;
-
   display: flex;
   flex-direction: column;
-`;
+`
 
 const HeaderText = styled.h2`
   font-size: 30px;
@@ -59,7 +58,7 @@ const HeaderText = styled.h2`
   color: #fff;
   z-index: 10;
   margin: 0;
-`;
+`
 
 const SmallText = styled.h5`
   color: #fff;
@@ -68,7 +67,8 @@ const SmallText = styled.h5`
   z-index: 10;
   margin: 0;
   margin-top: 7px;
-`;
+  
+`
 
 const InnerContainer = styled.div`
   width: 100%;
@@ -76,7 +76,7 @@ const InnerContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 1.8em;
-`;
+`
 
 const backdropVariants = {
   expanded: {
@@ -91,40 +91,40 @@ const backdropVariants = {
     borderRadius: '50%',
     transform: 'rotate(60deg)',
   },
-};
+}
 
 const expandingTransition = {
   type: 'spring',
   duration: 2.3,
-  stiffness: 30,
-};
+  stiffness: 40,
+}
 
 export function AccountBox(props: any) {
-  const [isExpanded, setExpanded] = useState(false);
-  const [active, setActive] = useState('signin');
+  const [isExpanded, setExpanded] = useState(false)
+  const [active, setActive] = useState('signin')
 
   const playExpandingAnimation = () => {
-    setExpanded(true);
+    setExpanded(true)
     setTimeout(() => {
-      setExpanded(false);
-    }, expandingTransition.duration * 1000 - 1600);
-  };
+      setExpanded(false)
+    }, expandingTransition.duration * 1000 - 1600)
+  }
 
   const switchToSignup = () => {
-    playExpandingAnimation();
+    playExpandingAnimation()
     setTimeout(() => {
-      setActive('signup');
-    }, 400);
-  };
+      setActive('signup')
+    }, 100)
+  }
 
   const switchToSignin = () => {
-    playExpandingAnimation();
+    playExpandingAnimation()
     setTimeout(() => {
-      setActive('signin');
-    }, 400);
-  };
+      setActive('signin')
+    }, 100);
+  }
 
-  const contextValue = { switchToSignup, switchToSignin };
+  const contextValue = { switchToSignup, switchToSignin }
 
   return (
     <AccountContext.Provider value={contextValue}>
@@ -140,6 +140,7 @@ export function AccountBox(props: any) {
             <HeaderContainer>
               <HeaderText>Welcome</HeaderText>
               <HeaderText>To Workify</HeaderText>
+              <HeaderText>Make training more social</HeaderText>
               <SmallText>Please sign-in to continue!</SmallText>
             </HeaderContainer>
           )}
@@ -147,6 +148,7 @@ export function AccountBox(props: any) {
             <HeaderContainer>
               <HeaderText>Create</HeaderText>
               <HeaderText>Account</HeaderText>
+              <HeaderText>Make training more social</HeaderText>
               <SmallText>Please sign-up to continue!</SmallText>
             </HeaderContainer>
           )}

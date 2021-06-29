@@ -1,0 +1,75 @@
+.SWcontainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 24vh;
+    border-radius: 20px;
+    background-color: #0b1c33;
+    min-width: 1000px;
+}
+
+.SWusername {
+    font-size: 25px;
+    align-self: center;
+    justify-self: center;
+    grid-column: 1/3;
+    grid-row: 2/4;
+    color: rgb(255, 255, 255);
+}
+
+.SWtimeofpost {
+    font-size: 25px;
+    justify-self: left;
+    align-self: center;
+    grid-column: 5/6;
+    grid-row: 1/2;
+    color: rgb(255, 255, 255);
+}
+
+.SWpost {
+    word-wrap: break-word;
+    font-size: 25px;
+    grid-column: 3/6;
+    grid-row: 2/4;
+    margin: 15px;
+    resize: none;
+    color: #FFF;
+}
+
+.SWtitle {
+    font-size: 30px;
+    justify-self: center;
+    align-self: center;
+    grid-column: 1/3;
+    grid-row: 1/3;
+    color: #fff;
+}
+
+.SWtime {
+    align-self: center;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    color: #fff;
+    width: 40px;
+    margin: 15px;
+}
+
+.SWtimeName {
+    align-self: center;
+    grid-column: 3/3;
+    grid-row: 1/2;
+    color: #fff;
+    padding-left: 60px;
+    padding-bottom: 5px;
+}
+
+.SWButton {
+    background-color: #0b1c33;
+    color: rgb(255, 255, 255);
+    height: 50px;
+    border-radius: 20px;
+    align-self: center;
+    font-size: 24px;
+    width: 200px;
+    height: 50px;
+}

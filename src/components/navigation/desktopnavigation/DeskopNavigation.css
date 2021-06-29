@@ -1,0 +1,13 @@
+.desktopNavigationWrapper {
+    background-color: #198A92;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    text-align: center;
+    align-self: center;
+    height: 35px;
+}
+
+.siteTitle {
+    grid-column: 5/7;
+    align-self: center;
+}

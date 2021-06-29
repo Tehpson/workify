@@ -1,5 +1,5 @@
-import "./MobileNavigation.css";
+import "./MobileNavigation.css"
 
 export const MobileNavigation = () => {
-  return <div className="mobilnavigation"></div>;
-};
+  return <div className="mobilnavigation"></div>
+}
