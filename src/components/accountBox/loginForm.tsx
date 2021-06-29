@@ -1,5 +1,5 @@
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react'
 import WorkifyAPIService from '../../assets/api/service/WorkifyAPIService'
 import {
 	BoldLink,
@@ -8,15 +8,15 @@ import {
 	Input,
 	MutedLink,
 	SubmitButton,
-} from './Style';
-import { Marginer } from '../marginer';
-import { AccountContext } from './accountContext';
-import { useHistory } from 'react-router-dom';
-import RoutingPath from '../../routes/RoutingPath';
+} from './Style'
+import { Marginer } from '../marginer'
+import { AccountContext } from './accountContext'
+import { useHistory } from 'react-router-dom'
+import RoutingPath from '../../routes/RoutingPath'
 export const LoginForm = (props: any) => {
 
   const history = useHistory();
-  const [credentials, setCredentials] = useState({ email: '', password: '' });
+  const [credentials, setCredentials] = useState({ email: '', password: '' })
   const { switchToSignup } = useContext(AccountContext);
   const [serverResponse, setServerResponse] = useState<any>()
   const [errorMSG, setErrorMSG] = useState("")
@@ -77,5 +77,5 @@ export const LoginForm = (props: any) => {
         </BoldLink>
       </MutedLink>
     </BoxContainer>
-  );
-};
+  )
+}

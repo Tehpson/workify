@@ -1,5 +1,5 @@
-import React from 'react';
-import { Wrapper } from '../register/Register.Style';
+import React from 'react'
+import { Wrapper } from '../register/Register.Style'
 
 export const Register = () => {
   return (
@@ -10,5 +10,5 @@ export const Register = () => {
         </h1>
       </div>
     </Wrapper>
-  );
-};
+  )
+}

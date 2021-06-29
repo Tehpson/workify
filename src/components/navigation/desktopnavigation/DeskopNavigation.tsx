@@ -1,4 +1,4 @@
-import './DeskopNavigation.css';
+import './DeskopNavigation.css'
 import Workify from '../../../assets/image/Workify.png'
 
 export const DeskopNavigation = () => {

@@ -93,9 +93,9 @@ export const Index = () => {
 				className="bio">
 				{userResponse?.bio}
 			</span>
-			<div className="homeTotlaWorkout">
-				Your total Workout Time is: {calcuteTotaltime()} min <br/>
-				Your total Number of workout is: {serverResponse?.length}
+			<div className="homeTotalWorkout">
+				Total workout time: {calcuteTotaltime()} min <br/>
+				Total number of workous: {serverResponse?.length}
 			</div>
 			<div
 				className='DisplayData'>
